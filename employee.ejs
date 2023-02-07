@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style media="screen">
+        tr:nth-child(even) {background: #CCC}
+    tr:nth-child(odd) {background: #FFF}
+    th{color :white;
+    
+    background-image:linear-gradient(to bottom, #11cdd4, #11999e);
+    }
+    .table {
+
+background-image:linear-gradient(to bottom, #11cdd4, #11999e);
+text-align: center;
+padding:0px 0px 0px 0px;
+border-radius: 10px;
+
+
+width: 70%;
+margin: auto;
+position: relative;
+top: 110px;}
+
+    
+th{
+    height : 40px;
+}
+tr{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-size-adjust: auto;
+}
+.btna {
+  background: #3ba9ad;
+  background-image: -webkit-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: -moz-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: -ms-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: -o-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: linear-gradient(to bottom, #3ba9ad, #44cacf);
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btna:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: -moz-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: -ms-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: -o-linear-gradient(top, #3ba9ad, #44cacf);
+  background-image: linear-gradient(to bottom, #3ba9ad, #44cacf);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  position: relative;
+  top: 150px;
+  left: 250px;
+}
+
+.btn:hover {
+  background: #3ba9ad;
+  background-image: -webkit-linear-gradient(top, #3498ad, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498ad, #2989b9);
+  background-image: -ms-linear-gradient(top, #3498ad, #2989b9);
+  background-image: -o-linear-gradient(top, #3498ad, #2989b9);
+  background-image: linear-gradient(to bottom, #3498ad, #2989b9);
+  text-decoration: none;
+}
+              
+  
+              
+        </style>
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>EMPLOYEE LIST</h1>
+    <div>
+        <table  class="table" >
+            <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Contact Number</th>
+                <th>Job Role</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+            <% if(employee.length > 0 ){ %>
+                <% for(var i = 0; i < employee.length ; i++){ %> 
+                <tr>
+                    <td><%- employee[i].id %></td>
+                    <td><%- employee[i].ename %></td>
+                    <td><%- employee[i].age %></td>
+                    <td><%- employee[i].mno %></td>
+                    <td><%- employee[i].jrole %></td>
+                    <td><a  href="/delete_emp?id=<%- employee[i].id %>" >Delete Employee</a></td>
+                    <td><a href="/update?id=<%- employee[i].id %>" >Update Details</a></td>
+                </tr>
+                <% } %>
+                <% } else{ %>
+                    <h1>Data is not present.</h1>
+                    <% } %> 
+            </table>
+    </div>
+    
+        <br>
+        <!-- <a class="btn" href="/register">ADD NEW USER</a> -->
+        <a href="/register" class="btn">Add New User</a>
+</body>
+</html>

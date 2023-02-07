@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>  h1{
+        text-align: center;
+        background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+        color:#EAF6F6 ;
+        padding: 10px;
+        margin:0 0 0 0 ;
+      }
+      .form{
+  
+        background-image:linear-gradient(to bottom, #11cdd4, #11999e);
+        text-align: center;
+        padding:40px 0px 50px 0px;
+        border-radius: 10px;
+  
+        width: 30%;
+        margin: auto;
+        position: relative;
+        top: 110px;
+      }
+      label{
+        width: 140px;
+        display:block;
+        margin:0.2cm;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: right;
+      }
+      .age{
+        padding-left: 25px;
+      }
+      .ename{
+        padding-left: 108px;
+      }
+      .mno{
+        padding-left: 105px;
+      }
+      .job{
+        padding-left: 58px;
+      }
+      h2{
+        padding-right: 20px;
+      }
+  
+      </style>
+  
+    <title>Document</title>
+</head>
+<body>
+    <h1> Update Employee</h1>
+<form class="form" action="" method="POST">
+     <label class="id "for=""></label>
+    <input type="hidden" name="id" value="<%= employee[0].id %>">
+    <label class="ename "for="">Employee Name</label>
+    <input type="text" name="ename" value="<%= employee[0].ename %>" placeholder="Enter Emp Name"> <br><br>
+    <label class="age"for="">Age</label>
+    <input type="text" name="age" value="<%= employee[0].age %>"  placeholder="Enter Emp Age"> <br><br>
+    <label class=" mno"for="">Mobile Number</label>
+    <input type="number" name="mno" value="<%= employee[0].mno %>"  placeholder="Enter Contact Number"> <br><br>
+    <label class="job "for="">Job role</label>
+    <input type="text" name="jrole" value="<%= employee[0].jrole %>"  placeholder="Enter Job Role"> <br><br>
+    <input type="submit" value="SUBMIT">
+
+</form>
+</body>
+</html>
